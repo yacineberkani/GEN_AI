@@ -64,28 +64,28 @@ Ce projet a pour objectif de générer des poèmes (ou tout autre texte créatif
 
 ## Explications techniques
 
-1. Chargement des modèles (**GPT-2** & **GPT-Neo**) :
+1. **Chargement des modèles (**GPT-2** & **GPT-Neo**) :**
 
- - Via `AutoTokenizer` et `AutoModelForCausalLM` (bibliothèque `transformers`).
- - Les poids sont téléchargés depuis Hugging Face, puis mis en cache localement.
+   - Via `AutoTokenizer` et `AutoModelForCausalLM` (bibliothèque `transformers`).
+   - Les poids sont téléchargés depuis Hugging Face, puis mis en cache localement.
 
-2. Génération de texte :
+2. **Génération de texte :**
 
-- Fonction `generate_text(...)` utilisant `model.generate()` de **PyTorch/Transformers**.
-- Paramètres tels que `max_length`, `temperature`, `top_p` pour contrôler la créativité.
+   - Fonction `generate_text(...)` utilisant `model.generate()` de **PyTorch/Transformers**.
+   - Paramètres tels que `max_length`, `temperature`, `top_p` pour contrôler la créativité.
 
-3. Calcul des scores :
+3. **Calcul des scores :**
 
-- **BLEU :** fonction `compute_bleu_score` (utilisant `sacrebleu.sentence_bleu`).
-- **ROUGE :** fonction `compute_rouge_score` (utilisant la librairie `evaluate`).
+   - **BLEU :** fonction `compute_bleu_score` (utilisant `sacrebleu.sentence_bleu`).
+   - **ROUGE :** fonction `compute_rouge_score` (utilisant la librairie `evaluate`).
 
-4. Comparaison :
+4. **Comparaison :**
 
-- La fonction `comparer_textes(...)` renvoie un dictionnaire contenant les scores BLEU et ROUGE sous différentes références (**GPT-2** comme ref, **GPT-Neo** comme ref).
+   - La fonction `comparer_textes(...)` renvoie un dictionnaire contenant les scores BLEU et ROUGE sous différentes références (**GPT-2** comme ref, **GPT-Neo** comme ref).
   
-5. Visualisation :
+5. **Visualisation :**
 
-- **Streamlit** pour afficher les textes générés (scores `BLEU` et `ROUGE`) de manière interactive et claire.
+   - **Streamlit** pour afficher les textes générés (scores `BLEU` et `ROUGE`) de manière interactive et claire.
 
 --------------------------------------------------
 ## Licence
